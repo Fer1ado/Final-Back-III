@@ -1,0 +1,36 @@
+<br>
+<br>
+<body class="container">
+<h2> tu código de ticket es: {{code}}</h2>
+<br>
+<br>
+
+<h4>Compraste los siguientes productos:</h4>
+    <div class="container">
+        {{#each this.products}}
+            <ul class="list-group list-group-flush lista">
+            <li class="list-group-item ">Producto:<h5> {{this.producto}} </h5>-  Cantidad: {{this.cantidad}}</li>   
+            </ul>
+        {{/each}}
+
+        <br>
+        <br>
+        <h4>Fecha Operacion: {{date}}</h4>
+        <br>
+        <h4>Comprador: {{purchaser}}</h4>
+        <br>
+        <h4>Id de la Operación: {{id}}</h4>
+        <br>
+        <br>
+        <br>
+        <h5>productos sin stock:</h5>
+        <div style="display:flex; justify-content: space-between">
+        {{#each this.unsold}}
+        <div><h6>producto: {{this.producto}}   </h6>  {{this.motive}}</div>
+        {{/each}}
+        </div>
+    </div>
+        <br>
+        <br>
+        <br>
+</body

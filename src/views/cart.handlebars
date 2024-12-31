@@ -1,0 +1,31 @@
+<h2> Carrito Nro: {{this.cart}}</h2>
+
+<p>{{item}}</p>
+<h4>tiene los siguientes productos:</h4>
+
+<body class="container">
+    <div class="container">
+        {{#each item}}
+            <ul class="list-group list-group-flush lista">
+            <li class="list-group-item list-group-item-secondary"><h5>ID : {{this.id}}</h5></li>
+            <li class="list-group-item ">Title: {{this.title}}</li>
+            <li class="list-group-item"><h5>Cantidad: {{this.quantity}}</h5></li>
+            <li class="list-group-item">Price: $-{{this.price}}</li>
+            <li class="list-group-item">Description: {{this.description}}</li>
+            <td><form action="/products/api/cart/{{this.cart}}/product/delete/{{this.id}}"  method="get" ><button class="btn btn-outline-primary" role="button" name="foo" id="delete" value="Borrar del carrito" > Borrar </button></form></td>
+            </ul>
+        {{/each}}
+        <br>
+        <br>
+        <div style="display:flex; justify-content: space-between">
+        <td><form action="/products/api/cart/delete/"  method="post" ><button class="btn btn-outline-danger" role="button" name="foo" id="delete" value="Borrar del carrito" > Borrar todos </button></form></td>
+        <br>
+        <br>
+        <td><form action="/products"  method="get" ><button class="btn btn-outline-success" role="button" name="foo" id="delete" value="Borrar del carrito" > PRODUCTOS </button></form></td>
+        <br>
+        <br>
+        <td><form action="/products/api/cart/{{this.cart}}/purchase"  method="get" ><button class="btn btn-outline-warning" role="button" name="foo" id="delete" value="Borrar del carrito" > COMPRAR </button></form></td>
+        </div>
+    </div>
+</body>
+
